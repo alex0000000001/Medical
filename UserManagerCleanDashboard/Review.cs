@@ -17,10 +17,12 @@ namespace Medical
         public int ReviewID { get; set; }
         public int MemberID { get; set; }
         public Nullable<int> ProductID { get; set; }
+        public Nullable<int> RatingTypeID { get; set; }
         public string CommentContent { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
     
         public virtual Member Member { get; set; }
         public virtual Product Product { get; set; }
+        public virtual RatingType RatingType { get; set; }
     }
 }

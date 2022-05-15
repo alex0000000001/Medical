@@ -21,11 +21,9 @@ namespace Medical
         }
     
         public int RoomID { get; set; }
-        public Nullable<int> DeptCategoryID { get; set; }
         public string RoomName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ClinicDetail> ClinicDetails { get; set; }
-        public virtual DepartmentCategory DepartmentCategory { get; set; }
     }
 }

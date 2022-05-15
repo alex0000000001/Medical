@@ -18,25 +18,29 @@ namespace Medical
         public Doctor()
         {
             this.Articles = new HashSet<Article>();
+            this.ClinicDetails = new HashSet<ClinicDetail>();
             this.RatingDoctors = new HashSet<RatingDoctor>();
+            this.Treatments = new HashSet<Treatment>();
         }
     
         public int DoctorID { get; set; }
-        public int MemberID { get; set; }
+        public Nullable<int> MemberID { get; set; }
         public string DoctorName { get; set; }
-        public int DepartmentID { get; set; }
+        public Nullable<int> DepartmentID { get; set; }
         public string Education { get; set; }
         public string JobTitle { get; set; }
-        public int TreatmentID { get; set; }
         public byte[] Picture { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Article> Articles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ClinicDetail> ClinicDetails { get; set; }
         public virtual Department Department { get; set; }
         public virtual Member Member { get; set; }
-        public virtual Treatment Treatment { get; set; }
         public virtual Experience Experience { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RatingDoctor> RatingDoctors { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Treatment> Treatments { get; set; }
     }
 }

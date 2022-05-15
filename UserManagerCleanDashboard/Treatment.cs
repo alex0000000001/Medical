@@ -14,20 +14,11 @@ namespace Medical
     
     public partial class Treatment
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Treatment()
-        {
-            this.Doctors = new HashSet<Doctor>();
-            this.TreatmentDetails = new HashSet<TreatmentDetail>();
-        }
-    
         public int TreatmentID { get; set; }
         public Nullable<int> DoctorID { get; set; }
         public Nullable<int> TreatmentDetailID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Doctor> Doctors { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TreatmentDetail> TreatmentDetails { get; set; }
+        public virtual Doctor Doctor { get; set; }
+        public virtual TreatmentDetail TreatmentDetail { get; set; }
     }
 }

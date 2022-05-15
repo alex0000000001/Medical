@@ -31,11 +31,11 @@ namespace Medical.UserControls
         {
             this.Header = new Siticone.Desktop.UI.WinForms.SiticonePanel();
             this.lbDoctorID = new System.Windows.Forms.Label();
-            this.BtnWork = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.BtnPaitent = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.BtnPatient = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.BtnClinic = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.siticonePanel1 = new Siticone.Desktop.UI.WinForms.SiticonePanel();
             this.PanelSlider = new Siticone.Desktop.UI.WinForms.SiticonePanel();
+            this.siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.Header.SuspendLayout();
             this.siticonePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,9 +43,9 @@ namespace Medical.UserControls
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.Header.Controls.Add(this.siticoneButton1);
             this.Header.Controls.Add(this.lbDoctorID);
-            this.Header.Controls.Add(this.BtnWork);
-            this.Header.Controls.Add(this.BtnPaitent);
+            this.Header.Controls.Add(this.BtnPatient);
             this.Header.Controls.Add(this.BtnClinic);
             this.Header.Dock = System.Windows.Forms.DockStyle.Top;
             this.Header.Location = new System.Drawing.Point(0, 0);
@@ -57,76 +57,44 @@ namespace Medical.UserControls
             // lbDoctorID
             // 
             this.lbDoctorID.AutoSize = true;
-            this.lbDoctorID.Location = new System.Drawing.Point(1070, 17);
+            this.lbDoctorID.Location = new System.Drawing.Point(980, 16);
             this.lbDoctorID.Name = "lbDoctorID";
-            this.lbDoctorID.Size = new System.Drawing.Size(79, 23);
+            this.lbDoctorID.Size = new System.Drawing.Size(65, 19);
             this.lbDoctorID.TabIndex = 5;
             this.lbDoctorID.Text = "DoctorID";
+            this.lbDoctorID.Visible = false;
             // 
-            // BtnWork
+            // BtnPatient
             // 
-            this.BtnWork.Animated = true;
-            this.BtnWork.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.BtnWork.CheckedState.CustomBorderColor = System.Drawing.Color.Cyan;
-            this.BtnWork.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.BtnWork.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.BtnWork.CheckedState.Parent = this.BtnWork;
-            this.BtnWork.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnWork.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.BtnWork.CustomImages.Parent = this.BtnWork;
-            this.BtnWork.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnWork.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnWork.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnWork.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnWork.DisabledState.Parent = this.BtnWork;
-            this.BtnWork.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.BtnWork.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnWork.ForeColor = System.Drawing.Color.DimGray;
-            this.BtnWork.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
-            this.BtnWork.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.BtnWork.HoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnWork.HoverState.Parent = this.BtnWork;
-            this.BtnWork.Location = new System.Drawing.Point(171, 6);
-            this.BtnWork.Name = "BtnWork";
-            this.BtnWork.PressedColor = System.Drawing.Color.White;
-            this.BtnWork.ShadowDecoration.Parent = this.BtnWork;
-            this.BtnWork.Size = new System.Drawing.Size(154, 45);
-            this.BtnWork.TabIndex = 4;
-            this.BtnWork.Text = "醫生工作區";
-            this.BtnWork.Click += new System.EventHandler(this.BtnWork_Click);
-            // 
-            // BtnPaitent
-            // 
-            this.BtnPaitent.Animated = true;
-            this.BtnPaitent.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.BtnPaitent.CheckedState.CustomBorderColor = System.Drawing.Color.Cyan;
-            this.BtnPaitent.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.BtnPaitent.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.BtnPaitent.CheckedState.Parent = this.BtnPaitent;
-            this.BtnPaitent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnPaitent.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.BtnPaitent.CustomImages.Parent = this.BtnPaitent;
-            this.BtnPaitent.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnPaitent.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnPaitent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnPaitent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnPaitent.DisabledState.Parent = this.BtnPaitent;
-            this.BtnPaitent.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.BtnPaitent.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPaitent.ForeColor = System.Drawing.Color.DimGray;
-            this.BtnPaitent.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
-            this.BtnPaitent.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.BtnPaitent.HoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnPaitent.HoverState.Parent = this.BtnPaitent;
-            this.BtnPaitent.Location = new System.Drawing.Point(332, 3);
-            this.BtnPaitent.Name = "BtnPaitent";
-            this.BtnPaitent.PressedColor = System.Drawing.Color.White;
-            this.BtnPaitent.ShadowDecoration.Parent = this.BtnPaitent;
-            this.BtnPaitent.Size = new System.Drawing.Size(154, 45);
-            this.BtnPaitent.TabIndex = 3;
-            this.BtnPaitent.Text = "我的病患";
-            this.BtnPaitent.Visible = false;
-            this.BtnPaitent.Click += new System.EventHandler(this.BtnPaitent_Click);
+            this.BtnPatient.Animated = true;
+            this.BtnPatient.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.BtnPatient.CheckedState.CustomBorderColor = System.Drawing.Color.Cyan;
+            this.BtnPatient.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
+            this.BtnPatient.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.BtnPatient.CheckedState.Parent = this.BtnPatient;
+            this.BtnPatient.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPatient.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.BtnPatient.CustomImages.Parent = this.BtnPatient;
+            this.BtnPatient.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnPatient.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnPatient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnPatient.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnPatient.DisabledState.Parent = this.BtnPatient;
+            this.BtnPatient.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BtnPatient.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPatient.ForeColor = System.Drawing.Color.DimGray;
+            this.BtnPatient.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
+            this.BtnPatient.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
+            this.BtnPatient.HoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnPatient.HoverState.Parent = this.BtnPatient;
+            this.BtnPatient.Location = new System.Drawing.Point(172, 2);
+            this.BtnPatient.Name = "BtnPatient";
+            this.BtnPatient.PressedColor = System.Drawing.Color.White;
+            this.BtnPatient.ShadowDecoration.Parent = this.BtnPatient;
+            this.BtnPatient.Size = new System.Drawing.Size(154, 47);
+            this.BtnPatient.TabIndex = 4;
+            this.BtnPatient.Text = "我的病患";
+            this.BtnPatient.Click += new System.EventHandler(this.BtnPatient_Click);
             // 
             // BtnClinic
             // 
@@ -155,7 +123,7 @@ namespace Medical.UserControls
             this.BtnClinic.Name = "BtnClinic";
             this.BtnClinic.PressedColor = System.Drawing.Color.White;
             this.BtnClinic.ShadowDecoration.Parent = this.BtnClinic;
-            this.BtnClinic.Size = new System.Drawing.Size(154, 45);
+            this.BtnClinic.Size = new System.Drawing.Size(154, 47);
             this.BtnClinic.TabIndex = 2;
             this.BtnClinic.Text = "我的門診";
             this.BtnClinic.Click += new System.EventHandler(this.BtnClinic_Click);
@@ -180,9 +148,41 @@ namespace Medical.UserControls
             this.PanelSlider.Size = new System.Drawing.Size(1138, 604);
             this.PanelSlider.TabIndex = 2;
             // 
+            // siticoneButton1
+            // 
+            this.siticoneButton1.Animated = true;
+            this.siticoneButton1.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.siticoneButton1.CheckedState.CustomBorderColor = System.Drawing.Color.Cyan;
+            this.siticoneButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
+            this.siticoneButton1.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.siticoneButton1.CheckedState.Parent = this.siticoneButton1;
+            this.siticoneButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.siticoneButton1.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.siticoneButton1.CustomImages.Parent = this.siticoneButton1;
+            this.siticoneButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.siticoneButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.siticoneButton1.DisabledState.Parent = this.siticoneButton1;
+            this.siticoneButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneButton1.ForeColor = System.Drawing.Color.DimGray;
+            this.siticoneButton1.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
+            this.siticoneButton1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
+            this.siticoneButton1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.siticoneButton1.HoverState.Parent = this.siticoneButton1;
+            this.siticoneButton1.Location = new System.Drawing.Point(332, 2);
+            this.siticoneButton1.Name = "siticoneButton1";
+            this.siticoneButton1.PressedColor = System.Drawing.Color.White;
+            this.siticoneButton1.ShadowDecoration.Parent = this.siticoneButton1;
+            this.siticoneButton1.Size = new System.Drawing.Size(154, 47);
+            this.siticoneButton1.TabIndex = 6;
+            this.siticoneButton1.Text = "醫生工作區";
+            this.siticoneButton1.Visible = false;
+            // 
             // MyDoctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.siticonePanel1);
@@ -202,9 +202,9 @@ namespace Medical.UserControls
         private Siticone.Desktop.UI.WinForms.SiticonePanel Header;
         private Siticone.Desktop.UI.WinForms.SiticonePanel siticonePanel1;
         private Siticone.Desktop.UI.WinForms.SiticonePanel PanelSlider;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton BtnWork;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton BtnPaitent;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton BtnPatient;
         private Siticone.Desktop.UI.WinForms.SiticoneButton BtnClinic;
         internal System.Windows.Forms.Label lbDoctorID;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
     }
 }

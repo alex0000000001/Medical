@@ -18,16 +18,17 @@ namespace Medical
         public TreatmentDetail()
         {
             this.CaseRecords = new HashSet<CaseRecord>();
+            this.Treatments = new HashSet<Treatment>();
         }
     
         public int TreatmentDetailID { get; set; }
-        public Nullable<int> TreatmentID { get; set; }
         public string TreatmentDetail1 { get; set; }
         public Nullable<int> DepartmentID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CaseRecord> CaseRecords { get; set; }
         public virtual Department Department { get; set; }
-        public virtual Treatment Treatment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Treatment> Treatments { get; set; }
     }
 }

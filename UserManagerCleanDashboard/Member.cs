@@ -39,7 +39,7 @@ namespace Medical
         public string Phone { get; set; }
         public Nullable<int> OD_Right { get; set; }
         public Nullable<int> OS_Left { get; set; }
-        public Nullable<int> Auth_ { get; set; }
+        public Nullable<int> Role { get; set; }
         public Nullable<int> CityID { get; set; }
         public string Address { get; set; }
     

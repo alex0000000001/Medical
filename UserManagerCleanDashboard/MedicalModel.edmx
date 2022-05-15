@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="AdminID" />
           </Key>
-          <Property Name="AdminID" Type="int" Nullable="false" />
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AdminName" Type="nvarchar" MaxLength="50" />
           <Property Name="AdminAccount" Type="nvarchar" MaxLength="50" />
           <Property Name="AdminPassword" Type="nvarchar" MaxLength="50" />
@@ -18,10 +18,10 @@
           <Key>
             <PropertyRef Name="No" />
           </Key>
-          <Property Name="No" Type="int" Nullable="false" />
+          <Property Name="No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AdminID" Type="int" />
           <Property Name="AdTitle" Type="nvarchar" MaxLength="50" />
-          <Property Name="AdContant" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdContant" Type="nvarchar(max)" />
           <Property Name="AdPicturePath" Type="nvarchar" MaxLength="50" />
           <Property Name="AdstatueId" Type="int" />
         </EntityType>
@@ -29,39 +29,38 @@
           <Key>
             <PropertyRef Name="AdstatueId" />
           </Key>
-          <Property Name="AdstatueId" Type="int" Nullable="false" />
+          <Property Name="AdstatueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Adstatue" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Article">
           <Key>
             <PropertyRef Name="ArticleID" />
           </Key>
-          <Property Name="ArticleID" Type="int" Nullable="false" />
+          <Property Name="ArticleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DoctorID" Type="int" />
+          <Property Name="AdminID" Type="int" />
           <Property Name="Articeltitle" Type="nvarchar" MaxLength="50" />
-          <Property Name="ArticleContent" Type="nvarchar" MaxLength="50" />
+          <Property Name="ArticleContent" Type="nvarchar(max)" />
           <Property Name="CreateDate" Type="datetime" />
         </EntityType>
         <EntityType Name="ArticleComment">
           <Key>
             <PropertyRef Name="CommentID" />
           </Key>
-          <Property Name="CommentID" Type="int" Nullable="false" />
+          <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ArticleID" Type="int" />
           <Property Name="MemberID" Type="int" />
           <Property Name="DoctorID" Type="int" />
           <Property Name="CommentContent" Type="nvarchar(max)" />
           <Property Name="CreateDate" Type="datetime" />
-          <Property Name="Reported" Type="bit" />
-          <Property Name="ReportID" Type="int" />
         </EntityType>
         <EntityType Name="CaseRecord">
           <Key>
             <PropertyRef Name="CaseID" />
           </Key>
-          <Property Name="CaseID" Type="int" Nullable="false" />
+          <Property Name="CaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberID" Type="int" Nullable="false" />
-          <Property Name="DiagnosticRecord" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DiagnosticRecord" Type="nvarchar" MaxLength="50" />
           <Property Name="ReserveID" Type="int" Nullable="false" />
           <Property Name="SyndromeDescription" Type="nvarchar(max)" />
           <Property Name="TreatmentDetailID" Type="int" />
@@ -70,7 +69,7 @@
           <Key>
             <PropertyRef Name="CityID" />
           </Key>
-          <Property Name="CityID" Type="int" Nullable="false" />
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CityName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ClinicDetail">
@@ -90,8 +89,7 @@
           <Key>
             <PropertyRef Name="RoomID" />
           </Key>
-          <Property Name="RoomID" Type="int" Nullable="false" />
-          <Property Name="DeptCategoryID" Type="int" />
+          <Property Name="RoomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RoomName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Department">
@@ -114,12 +112,11 @@
             <PropertyRef Name="DoctorID" />
           </Key>
           <Property Name="DoctorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MemberID" Type="int" Nullable="false" />
+          <Property Name="MemberID" Type="int" />
           <Property Name="DoctorName" Type="nvarchar" MaxLength="50" />
-          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" />
           <Property Name="Education" Type="nvarchar" MaxLength="50" />
           <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
-          <Property Name="TreatmentID" Type="int" Nullable="false" />
           <Property Name="Picture" Type="image" />
         </EntityType>
         <EntityType Name="Experience">
@@ -154,7 +151,7 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="50" />
           <Property Name="OD-Right" Type="int" />
           <Property Name="OS-Left" Type="int" />
-          <Property Name="Auth." Type="int" />
+          <Property Name="Role" Type="int" />
           <Property Name="CityID" Type="int" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -162,11 +159,11 @@
           <Key>
             <PropertyRef Name="No" />
           </Key>
-          <Property Name="No" Type="int" Nullable="false" />
+          <Property Name="No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AdminID" Type="int" />
           <Property Name="NewsCategoryID" Type="int" />
-          <Property Name="NewsTitle" Type="nvarchar" MaxLength="50" />
-          <Property Name="NewsContent" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewsTitle" Type="nvarchar(max)" />
+          <Property Name="NewsContent" Type="nvarchar(max)" />
           <Property Name="PublishDate" Type="datetime" />
           <Property Name="CreateDate" Type="datetime" />
         </EntityType>
@@ -174,7 +171,7 @@
           <Key>
             <PropertyRef Name="NEwsCategoryID" />
           </Key>
-          <Property Name="NEwsCategoryID" Type="int" Nullable="false" />
+          <Property Name="NEwsCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NewsCategoryName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Order">
@@ -225,7 +222,7 @@
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
-          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductCategoryID" Type="int" Nullable="false" />
           <Property Name="ProductBrandID" Type="int" Nullable="false" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -266,6 +263,7 @@
           <Property Name="RatingDoctorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="DoctorID" Type="int" Nullable="false" />
           <Property Name="RatingTypeID" Type="int" Nullable="false" />
+          <Property Name="Rating" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="RatingType">
           <Key>
@@ -294,6 +292,7 @@
           <Property Name="ReviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberID" Type="int" Nullable="false" />
           <Property Name="ProductID" Type="int" />
+          <Property Name="RatingTypeID" Type="int" />
           <Property Name="CommentContent" Type="nvarchar(max)" />
           <Property Name="CreateDate" Type="datetime" />
         </EntityType>
@@ -350,7 +349,6 @@
             <PropertyRef Name="TreatmentDetailID" />
           </Key>
           <Property Name="TreatmentDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TreatmentID" Type="int" />
           <Property Name="TreatmentDetail" Type="nvarchar" MaxLength="50" />
           <Property Name="DepartmentID" Type="int" />
         </EntityType>
@@ -375,6 +373,18 @@
             </Principal>
             <Dependent Role="Advertise">
               <PropertyRef Name="AdstatueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Article_Administarator">
+          <End Role="Administarator" Type="Self.Administarator" Multiplicity="0..1" />
+          <End Role="Article" Type="Self.Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administarator">
+              <PropertyRef Name="AdminID" />
+            </Principal>
+            <Dependent Role="Article">
+              <PropertyRef Name="AdminID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -474,6 +484,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ClinicDetail_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+          <End Role="ClinicDetail" Type="Self.ClinicDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="DoctorID" />
+            </Principal>
+            <Dependent Role="ClinicDetail">
+              <PropertyRef Name="DoctorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ClinicDetail_Period">
           <End Role="Period" Type="Self.Period" Multiplicity="1" />
           <End Role="ClinicDetail" Type="Self.ClinicDetail" Multiplicity="*" />
@@ -483,18 +505,6 @@
             </Principal>
             <Dependent Role="ClinicDetail">
               <PropertyRef Name="PeriodID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ClinicRoom_DepartmentCategory">
-          <End Role="DepartmentCategory" Type="Self.DepartmentCategory" Multiplicity="0..1" />
-          <End Role="ClinicRoom" Type="Self.ClinicRoom" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DepartmentCategory">
-              <PropertyRef Name="DeptCategoryID" />
-            </Principal>
-            <Dependent Role="ClinicRoom">
-              <PropertyRef Name="DeptCategoryID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -511,7 +521,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Doctor_Department">
-          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -523,7 +533,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Doctor_Member">
-          <End Role="Member" Type="Self.Member" Multiplicity="1" />
+          <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
           <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Member">
@@ -531,18 +541,6 @@
             </Principal>
             <Dependent Role="Doctor">
               <PropertyRef Name="MemberID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Doctor_Treatment">
-          <End Role="Treatment" Type="Self.Treatment" Multiplicity="1" />
-          <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Treatment">
-              <PropertyRef Name="TreatmentID" />
-            </Principal>
-            <Dependent Role="Doctor">
-              <PropertyRef Name="TreatmentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -822,6 +820,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Review_RatingType">
+          <End Role="RatingType" Type="Self.RatingType" Multiplicity="0..1" />
+          <End Role="Review" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RatingType">
+              <PropertyRef Name="RatingTypeID" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="RatingTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ShoppingCart_Member">
           <End Role="Member" Type="Self.Member" Multiplicity="1" />
           <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
@@ -846,6 +856,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Treatment_Doctor">
+          <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+          <End Role="Treatment" Type="Self.Treatment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="DoctorID" />
+            </Principal>
+            <Dependent Role="Treatment">
+              <PropertyRef Name="DoctorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Treatment_TreatmentDetail">
+          <End Role="TreatmentDetail" Type="Self.TreatmentDetail" Multiplicity="0..1" />
+          <End Role="Treatment" Type="Self.Treatment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TreatmentDetail">
+              <PropertyRef Name="TreatmentDetailID" />
+            </Principal>
+            <Dependent Role="Treatment">
+              <PropertyRef Name="TreatmentDetailID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TreatmentDetail_Department">
           <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
           <End Role="TreatmentDetail" Type="Self.TreatmentDetail" Multiplicity="*" />
@@ -855,18 +889,6 @@
             </Principal>
             <Dependent Role="TreatmentDetail">
               <PropertyRef Name="DepartmentID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TreatmentDetail_Treatment">
-          <End Role="Treatment" Type="Self.Treatment" Multiplicity="0..1" />
-          <End Role="TreatmentDetail" Type="Self.TreatmentDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Treatment">
-              <PropertyRef Name="TreatmentID" />
-            </Principal>
-            <Dependent Role="TreatmentDetail">
-              <PropertyRef Name="TreatmentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -916,6 +938,10 @@
             <End Role="AdvertiseStatue" EntitySet="AdvertiseStatue" />
             <End Role="Advertise" EntitySet="Advertise" />
           </AssociationSet>
+          <AssociationSet Name="FK_Article_Administarator" Association="Self.FK_Article_Administarator">
+            <End Role="Administarator" EntitySet="Administarator" />
+            <End Role="Article" EntitySet="Article" />
+          </AssociationSet>
           <AssociationSet Name="FK_Article_Doctor" Association="Self.FK_Article_Doctor">
             <End Role="Doctor" EntitySet="Doctor" />
             <End Role="Article" EntitySet="Article" />
@@ -948,13 +974,13 @@
             <End Role="Department" EntitySet="Department" />
             <End Role="ClinicDetail" EntitySet="ClinicDetail" />
           </AssociationSet>
+          <AssociationSet Name="FK_ClinicDetail_Doctor" Association="Self.FK_ClinicDetail_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="ClinicDetail" EntitySet="ClinicDetail" />
+          </AssociationSet>
           <AssociationSet Name="FK_ClinicDetail_Period" Association="Self.FK_ClinicDetail_Period">
             <End Role="Period" EntitySet="Period" />
             <End Role="ClinicDetail" EntitySet="ClinicDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ClinicRoom_DepartmentCategory" Association="Self.FK_ClinicRoom_DepartmentCategory">
-            <End Role="DepartmentCategory" EntitySet="DepartmentCategory" />
-            <End Role="ClinicRoom" EntitySet="ClinicRoom" />
           </AssociationSet>
           <AssociationSet Name="FK_Department_DepartmentCategory" Association="Self.FK_Department_DepartmentCategory">
             <End Role="DepartmentCategory" EntitySet="DepartmentCategory" />
@@ -966,10 +992,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Doctor_Member" Association="Self.FK_Doctor_Member">
             <End Role="Member" EntitySet="Member" />
-            <End Role="Doctor" EntitySet="Doctor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Doctor_Treatment" Association="Self.FK_Doctor_Treatment">
-            <End Role="Treatment" EntitySet="Treatment" />
             <End Role="Doctor" EntitySet="Doctor" />
           </AssociationSet>
           <AssociationSet Name="FK_Experience_Doctor" Association="Self.FK_Experience_Doctor">
@@ -1064,6 +1086,10 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
+          <AssociationSet Name="FK_Review_RatingType" Association="Self.FK_Review_RatingType">
+            <End Role="RatingType" EntitySet="RatingType" />
+            <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
           <AssociationSet Name="FK_ShoppingCart_Member" Association="Self.FK_ShoppingCart_Member">
             <End Role="Member" EntitySet="Member" />
             <End Role="ShoppingCart" EntitySet="ShoppingCart" />
@@ -1072,12 +1098,16 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="ShoppingCart" EntitySet="ShoppingCart" />
           </AssociationSet>
+          <AssociationSet Name="FK_Treatment_Doctor" Association="Self.FK_Treatment_Doctor">
+            <End Role="Doctor" EntitySet="Doctor" />
+            <End Role="Treatment" EntitySet="Treatment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Treatment_TreatmentDetail" Association="Self.FK_Treatment_TreatmentDetail">
+            <End Role="TreatmentDetail" EntitySet="TreatmentDetail" />
+            <End Role="Treatment" EntitySet="Treatment" />
+          </AssociationSet>
           <AssociationSet Name="FK_TreatmentDetail_Department" Association="Self.FK_TreatmentDetail_Department">
             <End Role="Department" EntitySet="Department" />
-            <End Role="TreatmentDetail" EntitySet="TreatmentDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TreatmentDetail_Treatment" Association="Self.FK_TreatmentDetail_Treatment">
-            <End Role="Treatment" EntitySet="Treatment" />
             <End Role="TreatmentDetail" EntitySet="TreatmentDetail" />
           </AssociationSet>
         </EntityContainer>
@@ -1127,6 +1157,10 @@
             <End Role="Administarator" EntitySet="Administarators" />
             <End Role="Advertise" EntitySet="Advertises" />
           </AssociationSet>
+          <AssociationSet Name="FK_Article_Administarator" Association="MedicalModel.FK_Article_Administarator">
+            <End Role="Administarator" EntitySet="Administarators" />
+            <End Role="Article" EntitySet="Articles" />
+          </AssociationSet>
           <AssociationSet Name="FK_News_Administarator" Association="MedicalModel.FK_News_Administarator">
             <End Role="Administarator" EntitySet="Administarators" />
             <End Role="News" EntitySet="News" />
@@ -1175,6 +1209,10 @@
             <End Role="Department" EntitySet="Departments" />
             <End Role="ClinicDetail" EntitySet="ClinicDetails" />
           </AssociationSet>
+          <AssociationSet Name="FK_ClinicDetail_Doctor" Association="MedicalModel.FK_ClinicDetail_Doctor">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="ClinicDetail" EntitySet="ClinicDetails" />
+          </AssociationSet>
           <AssociationSet Name="FK_ClinicDetail_Period" Association="MedicalModel.FK_ClinicDetail_Period">
             <End Role="Period" EntitySet="Periods" />
             <End Role="ClinicDetail" EntitySet="ClinicDetails" />
@@ -1182,10 +1220,6 @@
           <AssociationSet Name="FK_Reserve_ClinicDetail1" Association="MedicalModel.FK_Reserve_ClinicDetail1">
             <End Role="ClinicDetail" EntitySet="ClinicDetails" />
             <End Role="Reserve" EntitySet="Reserves" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ClinicRoom_DepartmentCategory" Association="MedicalModel.FK_ClinicRoom_DepartmentCategory">
-            <End Role="DepartmentCategory" EntitySet="DepartmentCategories" />
-            <End Role="ClinicRoom" EntitySet="ClinicRooms" />
           </AssociationSet>
           <AssociationSet Name="FK_Department_DepartmentCategory" Association="MedicalModel.FK_Department_DepartmentCategory">
             <End Role="DepartmentCategory" EntitySet="DepartmentCategories" />
@@ -1203,10 +1237,6 @@
             <End Role="Member" EntitySet="Members" />
             <End Role="Doctor" EntitySet="Doctors" />
           </AssociationSet>
-          <AssociationSet Name="FK_Doctor_Treatment" Association="MedicalModel.FK_Doctor_Treatment">
-            <End Role="Treatment" EntitySet="Treatments" />
-            <End Role="Doctor" EntitySet="Doctors" />
-          </AssociationSet>
           <AssociationSet Name="FK_Experience_Doctor" Association="MedicalModel.FK_Experience_Doctor">
             <End Role="Doctor" EntitySet="Doctors" />
             <End Role="Experience" EntitySet="Experiences" />
@@ -1214,6 +1244,10 @@
           <AssociationSet Name="FK_RatingDoctor_Doctor" Association="MedicalModel.FK_RatingDoctor_Doctor">
             <End Role="Doctor" EntitySet="Doctors" />
             <End Role="RatingDoctor" EntitySet="RatingDoctors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Treatment_Doctor" Association="MedicalModel.FK_Treatment_Doctor">
+            <End Role="Doctor" EntitySet="Doctors" />
+            <End Role="Treatment" EntitySet="Treatments" />
           </AssociationSet>
           <AssociationSet Name="FK_Member_Gender" Association="MedicalModel.FK_Member_Gender">
             <End Role="Gender" EntitySet="Genders" />
@@ -1283,6 +1317,10 @@
             <End Role="RatingType" EntitySet="RatingTypes" />
             <End Role="RatingDoctor" EntitySet="RatingDoctors" />
           </AssociationSet>
+          <AssociationSet Name="FK_Review_RatingType" Association="MedicalModel.FK_Review_RatingType">
+            <End Role="RatingType" EntitySet="RatingTypes" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
           <AssociationSet Name="FK_Reserve_Source" Association="MedicalModel.FK_Reserve_Source">
             <End Role="Source" EntitySet="Sources" />
             <End Role="Reserve" EntitySet="Reserves" />
@@ -1291,30 +1329,31 @@
             <End Role="State" EntitySet="States" />
             <End Role="Reserve" EntitySet="Reserves" />
           </AssociationSet>
-          <AssociationSet Name="FK_TreatmentDetail_Treatment" Association="MedicalModel.FK_TreatmentDetail_Treatment">
-            <End Role="Treatment" EntitySet="Treatments" />
+          <AssociationSet Name="FK_Treatment_TreatmentDetail" Association="MedicalModel.FK_Treatment_TreatmentDetail">
             <End Role="TreatmentDetail" EntitySet="TreatmentDetails" />
+            <End Role="Treatment" EntitySet="Treatments" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Administarator">
           <Key>
             <PropertyRef Name="AdminID" />
           </Key>
-          <Property Name="AdminID" Type="Int32" Nullable="false" />
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AdminAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AdminPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Advertises" Relationship="MedicalModel.FK_Adverrise_Administarator" FromRole="Administarator" ToRole="Advertise" />
+          <NavigationProperty Name="Articles" Relationship="MedicalModel.FK_Article_Administarator" FromRole="Administarator" ToRole="Article" />
           <NavigationProperty Name="News" Relationship="MedicalModel.FK_News_Administarator" FromRole="Administarator" ToRole="News" />
         </EntityType>
         <EntityType Name="Advertise">
           <Key>
             <PropertyRef Name="No" />
           </Key>
-          <Property Name="No" Type="Int32" Nullable="false" />
+          <Property Name="No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AdminID" Type="Int32" />
           <Property Name="AdTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AdContant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdContant" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AdPicturePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AdstatueId" Type="Int32" />
           <NavigationProperty Name="Administarator" Relationship="MedicalModel.FK_Adverrise_Administarator" FromRole="Advertise" ToRole="Administarator" />
@@ -1324,7 +1363,7 @@
           <Key>
             <PropertyRef Name="AdstatueId" />
           </Key>
-          <Property Name="AdstatueId" Type="Int32" Nullable="false" />
+          <Property Name="AdstatueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Adstatue" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Advertises" Relationship="MedicalModel.FK_Adverrise_Advertisestatue" FromRole="AdvertiseStatue" ToRole="Advertise" />
         </EntityType>
@@ -1332,11 +1371,13 @@
           <Key>
             <PropertyRef Name="ArticleID" />
           </Key>
-          <Property Name="ArticleID" Type="Int32" Nullable="false" />
+          <Property Name="ArticleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DoctorID" Type="Int32" />
+          <Property Name="AdminID" Type="Int32" />
           <Property Name="Articeltitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ArticleContent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ArticleContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Administarator" Relationship="MedicalModel.FK_Article_Administarator" FromRole="Article" ToRole="Administarator" />
           <NavigationProperty Name="Doctor" Relationship="MedicalModel.FK_Article_Doctor" FromRole="Article" ToRole="Doctor" />
           <NavigationProperty Name="ArticleComments" Relationship="MedicalModel.FK_ArticleComment_Article" FromRole="Article" ToRole="ArticleComment" />
         </EntityType>
@@ -1344,14 +1385,12 @@
           <Key>
             <PropertyRef Name="CommentID" />
           </Key>
-          <Property Name="CommentID" Type="Int32" Nullable="false" />
+          <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ArticleID" Type="Int32" />
           <Property Name="MemberID" Type="Int32" />
           <Property Name="DoctorID" Type="Int32" />
           <Property Name="CommentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreateDate" Type="DateTime" Precision="3" />
-          <Property Name="Reported" Type="Boolean" />
-          <Property Name="ReportID" Type="Int32" />
           <NavigationProperty Name="Article" Relationship="MedicalModel.FK_ArticleComment_Article" FromRole="ArticleComment" ToRole="Article" />
           <NavigationProperty Name="Member" Relationship="MedicalModel.FK_ArticleComment_Member" FromRole="ArticleComment" ToRole="Member" />
         </EntityType>
@@ -1359,9 +1398,9 @@
           <Key>
             <PropertyRef Name="CaseID" />
           </Key>
-          <Property Name="CaseID" Type="Int32" Nullable="false" />
+          <Property Name="CaseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MemberID" Type="Int32" Nullable="false" />
-          <Property Name="DiagnosticRecord" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiagnosticRecord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ReserveID" Type="Int32" Nullable="false" />
           <Property Name="SyndromeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="TreatmentDetailID" Type="Int32" />
@@ -1373,7 +1412,7 @@
           <Key>
             <PropertyRef Name="CityID" />
           </Key>
-          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Members" Relationship="MedicalModel.FK_Member_City" FromRole="City" ToRole="Member" />
           <NavigationProperty Name="Orders" Relationship="MedicalModel.FK_Order_City" FromRole="City" ToRole="Order" />
@@ -1392,6 +1431,7 @@
           <Property Name="LimitNum" Type="Int32" />
           <NavigationProperty Name="ClinicRoom" Relationship="MedicalModel.FK_ClinicDetail_ClinicRoom" FromRole="ClinicDetail" ToRole="ClinicRoom" />
           <NavigationProperty Name="Department" Relationship="MedicalModel.FK_ClinicDetail_Department" FromRole="ClinicDetail" ToRole="Department" />
+          <NavigationProperty Name="Doctor" Relationship="MedicalModel.FK_ClinicDetail_Doctor" FromRole="ClinicDetail" ToRole="Doctor" />
           <NavigationProperty Name="Period" Relationship="MedicalModel.FK_ClinicDetail_Period" FromRole="ClinicDetail" ToRole="Period" />
           <NavigationProperty Name="Reserves" Relationship="MedicalModel.FK_Reserve_ClinicDetail1" FromRole="ClinicDetail" ToRole="Reserve" />
         </EntityType>
@@ -1399,11 +1439,9 @@
           <Key>
             <PropertyRef Name="RoomID" />
           </Key>
-          <Property Name="RoomID" Type="Int32" Nullable="false" />
-          <Property Name="DeptCategoryID" Type="Int32" />
+          <Property Name="RoomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RoomName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ClinicDetails" Relationship="MedicalModel.FK_ClinicDetail_ClinicRoom" FromRole="ClinicRoom" ToRole="ClinicDetail" />
-          <NavigationProperty Name="DepartmentCategory" Relationship="MedicalModel.FK_ClinicRoom_DepartmentCategory" FromRole="ClinicRoom" ToRole="DepartmentCategory" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -1423,7 +1461,6 @@
           </Key>
           <Property Name="DeptCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DeptCategoryName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="ClinicRooms" Relationship="MedicalModel.FK_ClinicRoom_DepartmentCategory" FromRole="DepartmentCategory" ToRole="ClinicRoom" />
           <NavigationProperty Name="Departments" Relationship="MedicalModel.FK_Department_DepartmentCategory" FromRole="DepartmentCategory" ToRole="Department" />
         </EntityType>
         <EntityType Name="Doctor">
@@ -1431,19 +1468,19 @@
             <PropertyRef Name="DoctorID" />
           </Key>
           <Property Name="DoctorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MemberID" Type="Int32" Nullable="false" />
+          <Property Name="MemberID" Type="Int32" />
           <Property Name="DoctorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" />
           <Property Name="Education" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TreatmentID" Type="Int32" Nullable="false" />
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Articles" Relationship="MedicalModel.FK_Article_Doctor" FromRole="Doctor" ToRole="Article" />
+          <NavigationProperty Name="ClinicDetails" Relationship="MedicalModel.FK_ClinicDetail_Doctor" FromRole="Doctor" ToRole="ClinicDetail" />
           <NavigationProperty Name="Department" Relationship="MedicalModel.FK_Doctor_Department" FromRole="Doctor" ToRole="Department" />
           <NavigationProperty Name="Member" Relationship="MedicalModel.FK_Doctor_Member" FromRole="Doctor" ToRole="Member" />
-          <NavigationProperty Name="Treatment" Relationship="MedicalModel.FK_Doctor_Treatment" FromRole="Doctor" ToRole="Treatment" />
           <NavigationProperty Name="Experience" Relationship="MedicalModel.FK_Experience_Doctor" FromRole="Doctor" ToRole="Experience" />
           <NavigationProperty Name="RatingDoctors" Relationship="MedicalModel.FK_RatingDoctor_Doctor" FromRole="Doctor" ToRole="RatingDoctor" />
+          <NavigationProperty Name="Treatments" Relationship="MedicalModel.FK_Treatment_Doctor" FromRole="Doctor" ToRole="Treatment" />
         </EntityType>
         <EntityType Name="Experience">
           <Key>
@@ -1479,7 +1516,7 @@
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OD_Right" Type="Int32" />
           <Property Name="OS_Left" Type="Int32" />
-          <Property Name="Auth_" Type="Int32" />
+          <Property Name="Role" Type="Int32" />
           <Property Name="CityID" Type="Int32" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ArticleComments" Relationship="MedicalModel.FK_ArticleComment_Member" FromRole="Member" ToRole="ArticleComment" />
@@ -1496,11 +1533,11 @@
           <Key>
             <PropertyRef Name="No" />
           </Key>
-          <Property Name="No" Type="Int32" Nullable="false" />
+          <Property Name="No" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AdminID" Type="Int32" />
           <Property Name="NewsCategoryID" Type="Int32" />
-          <Property Name="NewsTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NewsContent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewsTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NewsContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PublishDate" Type="DateTime" Precision="3" />
           <Property Name="CreateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Administarator" Relationship="MedicalModel.FK_News_Administarator" FromRole="News" ToRole="Administarator" />
@@ -1510,7 +1547,7 @@
           <Key>
             <PropertyRef Name="NEwsCategoryID" />
           </Key>
-          <Property Name="NEwsCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="NEwsCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NewsCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="News" Relationship="MedicalModel.FK_News_Newscategory" FromRole="Newscategory" ToRole="News" />
         </EntityType>
@@ -1573,7 +1610,7 @@
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
-          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
           <Property Name="ProductBrandID" Type="Int32" Nullable="false" />
           <Property Name="ProductName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -1623,6 +1660,7 @@
           <Property Name="RatingDoctorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DoctorID" Type="Int32" Nullable="false" />
           <Property Name="RatingTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Rating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Doctor" Relationship="MedicalModel.FK_RatingDoctor_Doctor" FromRole="RatingDoctor" ToRole="Doctor" />
           <NavigationProperty Name="RatingType" Relationship="MedicalModel.FK_RatingDoctor_RatingType" FromRole="RatingDoctor" ToRole="RatingType" />
         </EntityType>
@@ -1633,6 +1671,7 @@
           <Property Name="RatingTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RatingTypeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="RatingDoctors" Relationship="MedicalModel.FK_RatingDoctor_RatingType" FromRole="RatingType" ToRole="RatingDoctor" />
+          <NavigationProperty Name="Reviews" Relationship="MedicalModel.FK_Review_RatingType" FromRole="RatingType" ToRole="Review" />
         </EntityType>
         <EntityType Name="Reserve">
           <Key>
@@ -1659,10 +1698,12 @@
           <Property Name="ReviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MemberID" Type="Int32" Nullable="false" />
           <Property Name="ProductID" Type="Int32" />
+          <Property Name="RatingTypeID" Type="Int32" />
           <Property Name="CommentContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CreateDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Member" Relationship="MedicalModel.FK_Review_Member" FromRole="Review" ToRole="Member" />
           <NavigationProperty Name="Product" Relationship="MedicalModel.FK_Review_Product" FromRole="Review" ToRole="Product" />
+          <NavigationProperty Name="RatingType" Relationship="MedicalModel.FK_Review_RatingType" FromRole="Review" ToRole="RatingType" />
         </EntityType>
         <EntityType Name="ShipType">
           <Key>
@@ -1716,20 +1757,19 @@
           <Property Name="TreatmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DoctorID" Type="Int32" />
           <Property Name="TreatmentDetailID" Type="Int32" />
-          <NavigationProperty Name="Doctors" Relationship="MedicalModel.FK_Doctor_Treatment" FromRole="Treatment" ToRole="Doctor" />
-          <NavigationProperty Name="TreatmentDetails" Relationship="MedicalModel.FK_TreatmentDetail_Treatment" FromRole="Treatment" ToRole="TreatmentDetail" />
+          <NavigationProperty Name="Doctor" Relationship="MedicalModel.FK_Treatment_Doctor" FromRole="Treatment" ToRole="Doctor" />
+          <NavigationProperty Name="TreatmentDetail" Relationship="MedicalModel.FK_Treatment_TreatmentDetail" FromRole="Treatment" ToRole="TreatmentDetail" />
         </EntityType>
         <EntityType Name="TreatmentDetail">
           <Key>
             <PropertyRef Name="TreatmentDetailID" />
           </Key>
           <Property Name="TreatmentDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TreatmentID" Type="Int32" />
           <Property Name="TreatmentDetail1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DepartmentID" Type="Int32" />
           <NavigationProperty Name="CaseRecords" Relationship="MedicalModel.FK_CaseRecord_TreatmentDetail" FromRole="TreatmentDetail" ToRole="CaseRecord" />
           <NavigationProperty Name="Department" Relationship="MedicalModel.FK_TreatmentDetail_Department" FromRole="TreatmentDetail" ToRole="Department" />
-          <NavigationProperty Name="Treatment" Relationship="MedicalModel.FK_TreatmentDetail_Treatment" FromRole="TreatmentDetail" ToRole="Treatment" />
+          <NavigationProperty Name="Treatments" Relationship="MedicalModel.FK_Treatment_TreatmentDetail" FromRole="TreatmentDetail" ToRole="Treatment" />
         </EntityType>
         <Association Name="FK_Adverrise_Administarator">
           <End Type="MedicalModel.Administarator" Role="Administarator" Multiplicity="0..1" />
@@ -1739,6 +1779,18 @@
               <PropertyRef Name="AdminID" />
             </Principal>
             <Dependent Role="Advertise">
+              <PropertyRef Name="AdminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Article_Administarator">
+          <End Type="MedicalModel.Administarator" Role="Administarator" Multiplicity="0..1" />
+          <End Type="MedicalModel.Article" Role="Article" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Administarator">
+              <PropertyRef Name="AdminID" />
+            </Principal>
+            <Dependent Role="Article">
               <PropertyRef Name="AdminID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1887,6 +1939,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ClinicDetail_Doctor">
+          <End Type="MedicalModel.Doctor" Role="Doctor" Multiplicity="0..1" />
+          <End Type="MedicalModel.ClinicDetail" Role="ClinicDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="DoctorID" />
+            </Principal>
+            <Dependent Role="ClinicDetail">
+              <PropertyRef Name="DoctorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ClinicDetail_Period">
           <End Type="MedicalModel.Period" Role="Period" Multiplicity="1" />
           <End Type="MedicalModel.ClinicDetail" Role="ClinicDetail" Multiplicity="*" />
@@ -1911,18 +1975,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ClinicRoom_DepartmentCategory">
-          <End Type="MedicalModel.DepartmentCategory" Role="DepartmentCategory" Multiplicity="0..1" />
-          <End Type="MedicalModel.ClinicRoom" Role="ClinicRoom" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DepartmentCategory">
-              <PropertyRef Name="DeptCategoryID" />
-            </Principal>
-            <Dependent Role="ClinicRoom">
-              <PropertyRef Name="DeptCategoryID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Department_DepartmentCategory">
           <End Type="MedicalModel.DepartmentCategory" Role="DepartmentCategory" Multiplicity="1" />
           <End Type="MedicalModel.Department" Role="Department" Multiplicity="*" />
@@ -1936,7 +1988,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Doctor_Department">
-          <End Type="MedicalModel.Department" Role="Department" Multiplicity="1" />
+          <End Type="MedicalModel.Department" Role="Department" Multiplicity="0..1" />
           <End Type="MedicalModel.Doctor" Role="Doctor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Department">
@@ -1960,7 +2012,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Doctor_Member">
-          <End Type="MedicalModel.Member" Role="Member" Multiplicity="1" />
+          <End Type="MedicalModel.Member" Role="Member" Multiplicity="0..1" />
           <End Type="MedicalModel.Doctor" Role="Doctor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Member">
@@ -1968,18 +2020,6 @@
             </Principal>
             <Dependent Role="Doctor">
               <PropertyRef Name="MemberID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Doctor_Treatment">
-          <End Type="MedicalModel.Treatment" Role="Treatment" Multiplicity="1" />
-          <End Type="MedicalModel.Doctor" Role="Doctor" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Treatment">
-              <PropertyRef Name="TreatmentID" />
-            </Principal>
-            <Dependent Role="Doctor">
-              <PropertyRef Name="TreatmentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2003,6 +2043,18 @@
               <PropertyRef Name="DoctorID" />
             </Principal>
             <Dependent Role="RatingDoctor">
+              <PropertyRef Name="DoctorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Treatment_Doctor">
+          <End Type="MedicalModel.Doctor" Role="Doctor" Multiplicity="0..1" />
+          <End Type="MedicalModel.Treatment" Role="Treatment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doctor">
+              <PropertyRef Name="DoctorID" />
+            </Principal>
+            <Dependent Role="Treatment">
               <PropertyRef Name="DoctorID" />
             </Dependent>
           </ReferentialConstraint>
@@ -2211,6 +2263,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Review_RatingType">
+          <End Type="MedicalModel.RatingType" Role="RatingType" Multiplicity="0..1" />
+          <End Type="MedicalModel.Review" Role="Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RatingType">
+              <PropertyRef Name="RatingTypeID" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="RatingTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Reserve_Source">
           <End Type="MedicalModel.Source" Role="Source" Multiplicity="0..1" />
           <End Type="MedicalModel.Reserve" Role="Reserve" Multiplicity="*" />
@@ -2235,15 +2299,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TreatmentDetail_Treatment">
-          <End Type="MedicalModel.Treatment" Role="Treatment" Multiplicity="0..1" />
-          <End Type="MedicalModel.TreatmentDetail" Role="TreatmentDetail" Multiplicity="*" />
+        <Association Name="FK_Treatment_TreatmentDetail">
+          <End Type="MedicalModel.TreatmentDetail" Role="TreatmentDetail" Multiplicity="0..1" />
+          <End Type="MedicalModel.Treatment" Role="Treatment" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Treatment">
-              <PropertyRef Name="TreatmentID" />
+            <Principal Role="TreatmentDetail">
+              <PropertyRef Name="TreatmentDetailID" />
             </Principal>
-            <Dependent Role="TreatmentDetail">
-              <PropertyRef Name="TreatmentID" />
+            <Dependent Role="Treatment">
+              <PropertyRef Name="TreatmentDetailID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2289,6 +2353,7 @@
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="ArticleContent" ColumnName="ArticleContent" />
                 <ScalarProperty Name="Articeltitle" ColumnName="Articeltitle" />
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
                 <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
                 <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
               </MappingFragment>
@@ -2297,8 +2362,6 @@
           <EntitySetMapping Name="ArticleComments">
             <EntityTypeMapping TypeName="MedicalModel.ArticleComment">
               <MappingFragment StoreEntitySet="ArticleComment">
-                <ScalarProperty Name="ReportID" ColumnName="ReportID" />
-                <ScalarProperty Name="Reported" ColumnName="Reported" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
                 <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
@@ -2346,7 +2409,6 @@
             <EntityTypeMapping TypeName="MedicalModel.ClinicRoom">
               <MappingFragment StoreEntitySet="ClinicRoom">
                 <ScalarProperty Name="RoomName" ColumnName="RoomName" />
-                <ScalarProperty Name="DeptCategoryID" ColumnName="DeptCategoryID" />
                 <ScalarProperty Name="RoomID" ColumnName="RoomID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2372,7 +2434,6 @@
             <EntityTypeMapping TypeName="MedicalModel.Doctor">
               <MappingFragment StoreEntitySet="Doctor">
                 <ScalarProperty Name="Picture" ColumnName="Picture" />
-                <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
                 <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
                 <ScalarProperty Name="Education" ColumnName="Education" />
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
@@ -2404,7 +2465,7 @@
               <MappingFragment StoreEntitySet="Member">
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
-                <ScalarProperty Name="Auth_" ColumnName="Auth." />
+                <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="OS_Left" ColumnName="OS-Left" />
                 <ScalarProperty Name="OD_Right" ColumnName="OD-Right" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
@@ -2536,6 +2597,7 @@
           <EntitySetMapping Name="RatingDoctors">
             <EntityTypeMapping TypeName="MedicalModel.RatingDoctor">
               <MappingFragment StoreEntitySet="RatingDoctor">
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
                 <ScalarProperty Name="RatingTypeID" ColumnName="RatingTypeID" />
                 <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
                 <ScalarProperty Name="RatingDoctorID" ColumnName="RatingDoctorID" />
@@ -2569,6 +2631,7 @@
               <MappingFragment StoreEntitySet="Review">
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+                <ScalarProperty Name="RatingTypeID" ColumnName="RatingTypeID" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="MemberID" ColumnName="MemberID" />
                 <ScalarProperty Name="ReviewID" ColumnName="ReviewID" />
@@ -2634,7 +2697,6 @@
               <MappingFragment StoreEntitySet="TreatmentDetail">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="TreatmentDetail1" ColumnName="TreatmentDetail" />
-                <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
                 <ScalarProperty Name="TreatmentDetailID" ColumnName="TreatmentDetailID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -2653,7 +2715,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

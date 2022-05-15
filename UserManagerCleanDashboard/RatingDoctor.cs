@@ -17,6 +17,7 @@ namespace Medical
         public int RatingDoctorID { get; set; }
         public int DoctorID { get; set; }
         public int RatingTypeID { get; set; }
+        public string Rating { get; set; }
     
         public virtual Doctor Doctor { get; set; }
         public virtual RatingType RatingType { get; set; }

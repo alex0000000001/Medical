@@ -18,6 +18,7 @@ namespace Medical
         public RatingType()
         {
             this.RatingDoctors = new HashSet<RatingDoctor>();
+            this.Reviews = new HashSet<Review>();
         }
     
         public int RatingTypeID { get; set; }
@@ -25,5 +26,7 @@ namespace Medical
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RatingDoctor> RatingDoctors { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

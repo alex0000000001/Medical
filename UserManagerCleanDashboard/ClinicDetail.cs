@@ -31,6 +31,7 @@ namespace Medical
     
         public virtual ClinicRoom ClinicRoom { get; set; }
         public virtual Department Department { get; set; }
+        public virtual Doctor Doctor { get; set; }
         public virtual Period Period { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reserve> Reserves { get; set; }

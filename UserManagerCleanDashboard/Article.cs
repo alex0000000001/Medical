@@ -22,10 +22,12 @@ namespace Medical
     
         public int ArticleID { get; set; }
         public Nullable<int> DoctorID { get; set; }
+        public Nullable<int> AdminID { get; set; }
         public string Articeltitle { get; set; }
         public string ArticleContent { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
     
+        public virtual Administarator Administarator { get; set; }
         public virtual Doctor Doctor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArticleComment> ArticleComments { get; set; }

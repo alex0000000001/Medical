@@ -20,8 +20,6 @@ namespace Medical
         public Nullable<int> DoctorID { get; set; }
         public string CommentContent { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
-        public Nullable<bool> Reported { get; set; }
-        public Nullable<int> ReportID { get; set; }
     
         public virtual Article Article { get; set; }
         public virtual Member Member { get; set; }

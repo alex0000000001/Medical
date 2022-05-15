@@ -13,17 +13,12 @@ namespace Medical.UserControls
 {
     public partial class MyDoctor : UserControl
     {
-        public static bool hasAuth { get; set; }
-        public static int role { get; set; }
         public MyDoctor()
         {
             InitializeComponent();
-            PanelSlider.Controls.Add(new MyDoctor_DoctorWork());
-            int a = 1;
-            lbDoctorID.Text = a.ToString();
-
-            PanelSlider.Controls.Add(new MyDoctor_DoctorWork());
             PanelSlider.Controls.Add(new MyDoctor_MyClinic());
+            PanelSlider.Controls.Add(new MyDoctor_DoctorWork());
+            PanelSlider.Controls.Add(new MyPatientView());
 
         }
 
@@ -34,11 +29,11 @@ namespace Medical.UserControls
                 case "MyDoctor_MyClinic":
                     PanelSlider.Controls.Find("MyDoctor_MyClinic", false)[0].BringToFront();
                     break;
-                case "Paitent":
-                    PanelSlider.Controls.Find("DoctorPaitent", false)[0].BringToFront();
-                    break;
                 case "MyDoctor_DoctorWork":
                     PanelSlider.Controls.Find("MyDoctor_DoctorWork", false)[0].BringToFront();
+                    break;
+                case "MyPatientView":
+                    PanelSlider.Controls.Find("MyPatientView", false)[0].BringToFront();
                     break;
             }
         }
@@ -48,16 +43,14 @@ namespace Medical.UserControls
             UISwitch("MyDoctor_MyClinic", false);
         }
 
-        private void BtnPaitent_Click(object sender, EventArgs e)
-        {
-            UISwitch("Paitent", false);
-        }
-
         private void BtnWork_Click(object sender, EventArgs e)
         {
             UISwitch("MyDoctor_DoctorWork", false);
         }
 
-        
+        private void BtnPatient_Click(object sender, EventArgs e)
+        {
+            UISwitch("MyPatientView", false);
+        }
     }
 }

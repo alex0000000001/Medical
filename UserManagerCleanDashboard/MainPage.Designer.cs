@@ -32,19 +32,22 @@ namespace Medical
             this.components = new System.ComponentModel.Container();
             this.SideNav = new Siticone.Desktop.UI.WinForms.SiticonePanel();
             this.SideNavButtonContainer = new Siticone.Desktop.UI.WinForms.SiticonePanel();
+            this.siticoneButton_Admin = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.siticoneButton1 = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.Btn_User_MemberCenter = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.Btn_DoctorMaintain = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.BtnMyDoctor = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.siticoneRatingStar1 = new Siticone.Desktop.UI.WinForms.SiticoneRatingStar();
             this.siticoneHtmlLabel2 = new Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel();
-            this.SettingBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
+            this.Btn_Admin_Membercenter = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.SalesBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.LogonBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.DashboardBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.DragPanel = new Siticone.Desktop.UI.WinForms.SiticonePanel();
+            this.siticoneButton_Home = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.BtnArticle = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.BtnInfo = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.BtnStore = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.BtnDoctorTeam = new Siticone.Desktop.UI.WinForms.SiticoneButton();
-            this.BtnTreatment = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.BtnClinic = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.ReportsBtn = new Siticone.Desktop.UI.WinForms.SiticoneButton();
             this.TopHeader = new Siticone.Desktop.UI.WinForms.SiticonePanel();
@@ -73,16 +76,20 @@ namespace Medical
             this.SideNav.MinimumSize = new System.Drawing.Size(55, 0);
             this.SideNav.Name = "SideNav";
             this.SideNav.ShadowDecoration.Parent = this.SideNav;
-            this.SideNav.Size = new System.Drawing.Size(170, 611);
+            this.SideNav.Size = new System.Drawing.Size(170, 791);
             this.SideNav.TabIndex = 0;
             // 
             // SideNavButtonContainer
             // 
             this.SideNavButtonContainer.BackColor = System.Drawing.Color.Transparent;
+            this.SideNavButtonContainer.Controls.Add(this.siticoneButton_Admin);
+            this.SideNavButtonContainer.Controls.Add(this.siticoneButton1);
+            this.SideNavButtonContainer.Controls.Add(this.Btn_User_MemberCenter);
+            this.SideNavButtonContainer.Controls.Add(this.Btn_DoctorMaintain);
             this.SideNavButtonContainer.Controls.Add(this.BtnMyDoctor);
             this.SideNavButtonContainer.Controls.Add(this.siticoneRatingStar1);
             this.SideNavButtonContainer.Controls.Add(this.siticoneHtmlLabel2);
-            this.SideNavButtonContainer.Controls.Add(this.SettingBtn);
+            this.SideNavButtonContainer.Controls.Add(this.Btn_Admin_Membercenter);
             this.SideNavButtonContainer.Controls.Add(this.SalesBtn);
             this.SideNavButtonContainer.Controls.Add(this.LogonBtn);
             this.SideNavButtonContainer.Controls.Add(this.DashboardBtn);
@@ -92,8 +99,163 @@ namespace Medical
             this.SideNavButtonContainer.Location = new System.Drawing.Point(0, 0);
             this.SideNavButtonContainer.Name = "SideNavButtonContainer";
             this.SideNavButtonContainer.ShadowDecoration.Parent = this.SideNavButtonContainer;
-            this.SideNavButtonContainer.Size = new System.Drawing.Size(170, 611);
+            this.SideNavButtonContainer.Size = new System.Drawing.Size(170, 791);
             this.SideNavButtonContainer.TabIndex = 1;
+            // 
+            // siticoneButton_Admin
+            // 
+            this.siticoneButton_Admin.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.siticoneButton_Admin.CheckedState.CustomBorderColor = System.Drawing.Color.Fuchsia;
+            this.siticoneButton_Admin.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.siticoneButton_Admin.CheckedState.ForeColor = System.Drawing.Color.Fuchsia;
+            this.siticoneButton_Admin.CheckedState.Image = global::Medical.Properties.Resources.settings_dark;
+            this.siticoneButton_Admin.CheckedState.Parent = this.siticoneButton_Admin;
+            this.siticoneButton_Admin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.siticoneButton_Admin.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.siticoneButton_Admin.CustomImages.Parent = this.siticoneButton_Admin;
+            this.siticoneButton_Admin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton_Admin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton_Admin.DisabledState.FillColor = System.Drawing.Color.Black;
+            this.siticoneButton_Admin.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.siticoneButton_Admin.DisabledState.Parent = this.siticoneButton_Admin;
+            this.siticoneButton_Admin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.siticoneButton_Admin.FillColor = System.Drawing.Color.Transparent;
+            this.siticoneButton_Admin.FocusedColor = System.Drawing.Color.Transparent;
+            this.siticoneButton_Admin.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.siticoneButton_Admin.ForeColor = System.Drawing.Color.Black;
+            this.siticoneButton_Admin.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
+            this.siticoneButton_Admin.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.siticoneButton_Admin.HoverState.ForeColor = System.Drawing.Color.White;
+            this.siticoneButton_Admin.HoverState.Parent = this.siticoneButton_Admin;
+            this.siticoneButton_Admin.Image = global::Medical.Properties.Resources.settings_dark;
+            this.siticoneButton_Admin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.siticoneButton_Admin.ImageOffset = new System.Drawing.Point(10, 0);
+            this.siticoneButton_Admin.Location = new System.Drawing.Point(0, 400);
+            this.siticoneButton_Admin.Name = "siticoneButton_Admin";
+            this.siticoneButton_Admin.ShadowDecoration.Parent = this.siticoneButton_Admin;
+            this.siticoneButton_Admin.Size = new System.Drawing.Size(170, 50);
+            this.siticoneButton_Admin.TabIndex = 20;
+            this.siticoneButton_Admin.Text = "後台";
+            this.siticoneButton_Admin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.siticoneButton_Admin.TextOffset = new System.Drawing.Point(20, 0);
+            this.siticoneButton_Admin.Visible = false;
+            this.siticoneButton_Admin.Click += new System.EventHandler(this.siticoneButton_Admin_Click);
+            // 
+            // siticoneButton1
+            // 
+            this.siticoneButton1.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.siticoneButton1.CheckedState.CustomBorderColor = System.Drawing.Color.Fuchsia;
+            this.siticoneButton1.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.siticoneButton1.CheckedState.ForeColor = System.Drawing.Color.Fuchsia;
+            this.siticoneButton1.CheckedState.Image = global::Medical.Properties.Resources.settings_dark;
+            this.siticoneButton1.CheckedState.Parent = this.siticoneButton1;
+            this.siticoneButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.siticoneButton1.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.siticoneButton1.CustomImages.Parent = this.siticoneButton1;
+            this.siticoneButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton1.DisabledState.FillColor = System.Drawing.Color.Black;
+            this.siticoneButton1.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.siticoneButton1.DisabledState.Parent = this.siticoneButton1;
+            this.siticoneButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.siticoneButton1.FillColor = System.Drawing.Color.Transparent;
+            this.siticoneButton1.FocusedColor = System.Drawing.Color.Transparent;
+            this.siticoneButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.siticoneButton1.ForeColor = System.Drawing.Color.Black;
+            this.siticoneButton1.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
+            this.siticoneButton1.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.siticoneButton1.HoverState.ForeColor = System.Drawing.Color.White;
+            this.siticoneButton1.HoverState.Parent = this.siticoneButton1;
+            this.siticoneButton1.Image = global::Medical.Properties.Resources.settings_dark;
+            this.siticoneButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.siticoneButton1.ImageOffset = new System.Drawing.Point(10, 0);
+            this.siticoneButton1.Location = new System.Drawing.Point(0, 350);
+            this.siticoneButton1.Name = "siticoneButton1";
+            this.siticoneButton1.ShadowDecoration.Parent = this.siticoneButton1;
+            this.siticoneButton1.Size = new System.Drawing.Size(170, 50);
+            this.siticoneButton1.TabIndex = 17;
+            this.siticoneButton1.Text = "登出";
+            this.siticoneButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.siticoneButton1.TextOffset = new System.Drawing.Point(20, 0);
+            this.siticoneButton1.Click += new System.EventHandler(this.siticoneButton1_Click);
+            // 
+            // Btn_User_MemberCenter
+            // 
+            this.Btn_User_MemberCenter.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.Btn_User_MemberCenter.CheckedState.CustomBorderColor = System.Drawing.Color.Fuchsia;
+            this.Btn_User_MemberCenter.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_User_MemberCenter.CheckedState.ForeColor = System.Drawing.Color.Fuchsia;
+            this.Btn_User_MemberCenter.CheckedState.Image = global::Medical.Properties.Resources.settings_dark;
+            this.Btn_User_MemberCenter.CheckedState.Parent = this.Btn_User_MemberCenter;
+            this.Btn_User_MemberCenter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_User_MemberCenter.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.Btn_User_MemberCenter.CustomImages.Parent = this.Btn_User_MemberCenter;
+            this.Btn_User_MemberCenter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_User_MemberCenter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_User_MemberCenter.DisabledState.FillColor = System.Drawing.Color.Black;
+            this.Btn_User_MemberCenter.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.Btn_User_MemberCenter.DisabledState.Parent = this.Btn_User_MemberCenter;
+            this.Btn_User_MemberCenter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_User_MemberCenter.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_User_MemberCenter.FocusedColor = System.Drawing.Color.Transparent;
+            this.Btn_User_MemberCenter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Btn_User_MemberCenter.ForeColor = System.Drawing.Color.Black;
+            this.Btn_User_MemberCenter.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
+            this.Btn_User_MemberCenter.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_User_MemberCenter.HoverState.ForeColor = System.Drawing.Color.White;
+            this.Btn_User_MemberCenter.HoverState.Parent = this.Btn_User_MemberCenter;
+            this.Btn_User_MemberCenter.Image = global::Medical.Properties.Resources.settings_dark;
+            this.Btn_User_MemberCenter.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Btn_User_MemberCenter.ImageOffset = new System.Drawing.Point(10, 0);
+            this.Btn_User_MemberCenter.Location = new System.Drawing.Point(0, 300);
+            this.Btn_User_MemberCenter.Name = "Btn_User_MemberCenter";
+            this.Btn_User_MemberCenter.ShadowDecoration.Parent = this.Btn_User_MemberCenter;
+            this.Btn_User_MemberCenter.Size = new System.Drawing.Size(170, 50);
+            this.Btn_User_MemberCenter.TabIndex = 16;
+            this.Btn_User_MemberCenter.Text = "會員中心";
+            this.Btn_User_MemberCenter.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Btn_User_MemberCenter.TextOffset = new System.Drawing.Point(20, 0);
+            this.Btn_User_MemberCenter.Visible = false;
+            this.Btn_User_MemberCenter.Click += new System.EventHandler(this.Btn_User_MemberCenter_Click);
+            // 
+            // Btn_DoctorMaintain
+            // 
+            this.Btn_DoctorMaintain.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.Btn_DoctorMaintain.CheckedState.CustomBorderColor = System.Drawing.Color.Fuchsia;
+            this.Btn_DoctorMaintain.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_DoctorMaintain.CheckedState.ForeColor = System.Drawing.Color.Fuchsia;
+            this.Btn_DoctorMaintain.CheckedState.Image = global::Medical.Properties.Resources.settings_dark;
+            this.Btn_DoctorMaintain.CheckedState.Parent = this.Btn_DoctorMaintain;
+            this.Btn_DoctorMaintain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_DoctorMaintain.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.Btn_DoctorMaintain.CustomImages.Parent = this.Btn_DoctorMaintain;
+            this.Btn_DoctorMaintain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_DoctorMaintain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_DoctorMaintain.DisabledState.FillColor = System.Drawing.Color.Black;
+            this.Btn_DoctorMaintain.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.Btn_DoctorMaintain.DisabledState.Parent = this.Btn_DoctorMaintain;
+            this.Btn_DoctorMaintain.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_DoctorMaintain.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_DoctorMaintain.FocusedColor = System.Drawing.Color.Transparent;
+            this.Btn_DoctorMaintain.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Btn_DoctorMaintain.ForeColor = System.Drawing.Color.Black;
+            this.Btn_DoctorMaintain.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
+            this.Btn_DoctorMaintain.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_DoctorMaintain.HoverState.ForeColor = System.Drawing.Color.White;
+            this.Btn_DoctorMaintain.HoverState.Parent = this.Btn_DoctorMaintain;
+            this.Btn_DoctorMaintain.Image = global::Medical.Properties.Resources.settings_dark;
+            this.Btn_DoctorMaintain.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Btn_DoctorMaintain.ImageOffset = new System.Drawing.Point(10, 0);
+            this.Btn_DoctorMaintain.Location = new System.Drawing.Point(0, 250);
+            this.Btn_DoctorMaintain.Name = "Btn_DoctorMaintain";
+            this.Btn_DoctorMaintain.ShadowDecoration.Parent = this.Btn_DoctorMaintain;
+            this.Btn_DoctorMaintain.Size = new System.Drawing.Size(170, 50);
+            this.Btn_DoctorMaintain.TabIndex = 15;
+            this.Btn_DoctorMaintain.Text = "醫生列表(後";
+            this.Btn_DoctorMaintain.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Btn_DoctorMaintain.TextOffset = new System.Drawing.Point(20, 0);
+            this.Btn_DoctorMaintain.Visible = false;
+            this.Btn_DoctorMaintain.Click += new System.EventHandler(this.Btn_DoctorMaintain_Click);
             // 
             // BtnMyDoctor
             // 
@@ -128,9 +290,10 @@ namespace Medical
             this.BtnMyDoctor.ShadowDecoration.Parent = this.BtnMyDoctor;
             this.BtnMyDoctor.Size = new System.Drawing.Size(170, 50);
             this.BtnMyDoctor.TabIndex = 14;
-            this.BtnMyDoctor.Text = "MyDoctor";
+            this.BtnMyDoctor.Text = "醫生系統(後)";
             this.BtnMyDoctor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnMyDoctor.TextOffset = new System.Drawing.Point(20, 0);
+            this.BtnMyDoctor.Visible = false;
             this.BtnMyDoctor.Click += new System.EventHandler(this.BtnMyDoctor_Click);
             // 
             // siticoneRatingStar1
@@ -138,10 +301,10 @@ namespace Medical
             this.siticoneRatingStar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.siticoneRatingStar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.siticoneRatingStar1.FillColor = System.Drawing.Color.Transparent;
-            this.siticoneRatingStar1.Location = new System.Drawing.Point(12, 468);
+            this.siticoneRatingStar1.Location = new System.Drawing.Point(14, 506);
             this.siticoneRatingStar1.Name = "siticoneRatingStar1";
             this.siticoneRatingStar1.RatingColor = System.Drawing.Color.Cyan;
-            this.siticoneRatingStar1.Size = new System.Drawing.Size(120, 28);
+            this.siticoneRatingStar1.Size = new System.Drawing.Size(120, 32);
             this.siticoneRatingStar1.TabIndex = 13;
             // 
             // siticoneHtmlLabel2
@@ -151,47 +314,48 @@ namespace Medical
             this.siticoneHtmlLabel2.ForeColor = System.Drawing.Color.Gray;
             this.siticoneHtmlLabel2.Location = new System.Drawing.Point(14, 450);
             this.siticoneHtmlLabel2.Name = "siticoneHtmlLabel2";
-            this.siticoneHtmlLabel2.Size = new System.Drawing.Size(30, 17);
+            this.siticoneHtmlLabel2.Size = new System.Drawing.Size(25, 14);
             this.siticoneHtmlLabel2.TabIndex = 12;
             this.siticoneHtmlLabel2.Text = "RATE";
             // 
-            // SettingBtn
+            // Btn_Admin_Membercenter
             // 
-            this.SettingBtn.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.SettingBtn.CheckedState.CustomBorderColor = System.Drawing.Color.Fuchsia;
-            this.SettingBtn.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.SettingBtn.CheckedState.ForeColor = System.Drawing.Color.Fuchsia;
-            this.SettingBtn.CheckedState.Image = global::Medical.Properties.Resources.settings_dark;
-            this.SettingBtn.CheckedState.Parent = this.SettingBtn;
-            this.SettingBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SettingBtn.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.SettingBtn.CustomImages.Parent = this.SettingBtn;
-            this.SettingBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SettingBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SettingBtn.DisabledState.FillColor = System.Drawing.Color.Black;
-            this.SettingBtn.DisabledState.ForeColor = System.Drawing.Color.Black;
-            this.SettingBtn.DisabledState.Parent = this.SettingBtn;
-            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SettingBtn.FillColor = System.Drawing.Color.Transparent;
-            this.SettingBtn.FocusedColor = System.Drawing.Color.Transparent;
-            this.SettingBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SettingBtn.ForeColor = System.Drawing.Color.Black;
-            this.SettingBtn.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
-            this.SettingBtn.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.SettingBtn.HoverState.ForeColor = System.Drawing.Color.White;
-            this.SettingBtn.HoverState.Parent = this.SettingBtn;
-            this.SettingBtn.Image = global::Medical.Properties.Resources.settings_dark;
-            this.SettingBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.SettingBtn.ImageOffset = new System.Drawing.Point(10, 0);
-            this.SettingBtn.Location = new System.Drawing.Point(0, 150);
-            this.SettingBtn.Name = "SettingBtn";
-            this.SettingBtn.ShadowDecoration.Parent = this.SettingBtn;
-            this.SettingBtn.Size = new System.Drawing.Size(170, 50);
-            this.SettingBtn.TabIndex = 6;
-            this.SettingBtn.Text = "Settings";
-            this.SettingBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.SettingBtn.TextOffset = new System.Drawing.Point(20, 0);
-            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
+            this.Btn_Admin_Membercenter.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.Btn_Admin_Membercenter.CheckedState.CustomBorderColor = System.Drawing.Color.Fuchsia;
+            this.Btn_Admin_Membercenter.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_Admin_Membercenter.CheckedState.ForeColor = System.Drawing.Color.Fuchsia;
+            this.Btn_Admin_Membercenter.CheckedState.Image = global::Medical.Properties.Resources.settings_dark;
+            this.Btn_Admin_Membercenter.CheckedState.Parent = this.Btn_Admin_Membercenter;
+            this.Btn_Admin_Membercenter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Admin_Membercenter.CustomBorderThickness = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.Btn_Admin_Membercenter.CustomImages.Parent = this.Btn_Admin_Membercenter;
+            this.Btn_Admin_Membercenter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_Admin_Membercenter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Btn_Admin_Membercenter.DisabledState.FillColor = System.Drawing.Color.Black;
+            this.Btn_Admin_Membercenter.DisabledState.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Admin_Membercenter.DisabledState.Parent = this.Btn_Admin_Membercenter;
+            this.Btn_Admin_Membercenter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_Admin_Membercenter.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_Admin_Membercenter.FocusedColor = System.Drawing.Color.Transparent;
+            this.Btn_Admin_Membercenter.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Btn_Admin_Membercenter.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Admin_Membercenter.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
+            this.Btn_Admin_Membercenter.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.Btn_Admin_Membercenter.HoverState.ForeColor = System.Drawing.Color.White;
+            this.Btn_Admin_Membercenter.HoverState.Parent = this.Btn_Admin_Membercenter;
+            this.Btn_Admin_Membercenter.Image = global::Medical.Properties.Resources.settings_dark;
+            this.Btn_Admin_Membercenter.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Btn_Admin_Membercenter.ImageOffset = new System.Drawing.Point(10, 0);
+            this.Btn_Admin_Membercenter.Location = new System.Drawing.Point(0, 150);
+            this.Btn_Admin_Membercenter.Name = "Btn_Admin_Membercenter";
+            this.Btn_Admin_Membercenter.ShadowDecoration.Parent = this.Btn_Admin_Membercenter;
+            this.Btn_Admin_Membercenter.Size = new System.Drawing.Size(170, 50);
+            this.Btn_Admin_Membercenter.TabIndex = 6;
+            this.Btn_Admin_Membercenter.Text = "會員中心(後)";
+            this.Btn_Admin_Membercenter.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Btn_Admin_Membercenter.TextOffset = new System.Drawing.Point(20, 0);
+            this.Btn_Admin_Membercenter.Visible = false;
+            this.Btn_Admin_Membercenter.Click += new System.EventHandler(this.SettingBtn_Click);
             // 
             // SalesBtn
             // 
@@ -226,7 +390,7 @@ namespace Medical
             this.SalesBtn.ShadowDecoration.Parent = this.SalesBtn;
             this.SalesBtn.Size = new System.Drawing.Size(170, 50);
             this.SalesBtn.TabIndex = 4;
-            this.SalesBtn.Text = "ShoppingCart";
+            this.SalesBtn.Text = "購物車";
             this.SalesBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.SalesBtn.TextOffset = new System.Drawing.Point(20, 0);
             this.SalesBtn.Click += new System.EventHandler(this.SalesBtn_Click);
@@ -264,7 +428,7 @@ namespace Medical
             this.LogonBtn.ShadowDecoration.Parent = this.LogonBtn;
             this.LogonBtn.Size = new System.Drawing.Size(170, 50);
             this.LogonBtn.TabIndex = 2;
-            this.LogonBtn.Text = "Logon";
+            this.LogonBtn.Text = "會員中心";
             this.LogonBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.LogonBtn.TextOffset = new System.Drawing.Point(20, 0);
             this.LogonBtn.Click += new System.EventHandler(this.BtnLogon_Click);
@@ -310,11 +474,10 @@ namespace Medical
             // 
             // DragPanel
             // 
+            this.DragPanel.Controls.Add(this.siticoneButton_Home);
             this.DragPanel.Controls.Add(this.BtnArticle);
-            this.DragPanel.Controls.Add(this.BtnInfo);
             this.DragPanel.Controls.Add(this.BtnStore);
             this.DragPanel.Controls.Add(this.BtnDoctorTeam);
-            this.DragPanel.Controls.Add(this.BtnTreatment);
             this.DragPanel.Controls.Add(this.BtnClinic);
             this.DragPanel.Controls.Add(this.ReportsBtn);
             this.DragPanel.Controls.Add(this.TopHeader);
@@ -326,8 +489,40 @@ namespace Medical
             this.DragPanel.Location = new System.Drawing.Point(0, 0);
             this.DragPanel.Name = "DragPanel";
             this.DragPanel.ShadowDecoration.Parent = this.DragPanel;
-            this.DragPanel.Size = new System.Drawing.Size(1277, 87);
+            this.DragPanel.Size = new System.Drawing.Size(1369, 87);
             this.DragPanel.TabIndex = 1;
+            // 
+            // siticoneButton_Home
+            // 
+            this.siticoneButton_Home.Animated = true;
+            this.siticoneButton_Home.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
+            this.siticoneButton_Home.CheckedState.CustomBorderColor = System.Drawing.Color.Cyan;
+            this.siticoneButton_Home.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
+            this.siticoneButton_Home.CheckedState.ForeColor = System.Drawing.Color.White;
+            this.siticoneButton_Home.CheckedState.Parent = this.siticoneButton_Home;
+            this.siticoneButton_Home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.siticoneButton_Home.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.siticoneButton_Home.CustomImages.Parent = this.siticoneButton_Home;
+            this.siticoneButton_Home.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton_Home.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.siticoneButton_Home.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.siticoneButton_Home.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.siticoneButton_Home.DisabledState.Parent = this.siticoneButton_Home;
+            this.siticoneButton_Home.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.siticoneButton_Home.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.siticoneButton_Home.ForeColor = System.Drawing.Color.DimGray;
+            this.siticoneButton_Home.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
+            this.siticoneButton_Home.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
+            this.siticoneButton_Home.HoverState.ForeColor = System.Drawing.Color.White;
+            this.siticoneButton_Home.HoverState.Parent = this.siticoneButton_Home;
+            this.siticoneButton_Home.Location = new System.Drawing.Point(12, 41);
+            this.siticoneButton_Home.Name = "siticoneButton_Home";
+            this.siticoneButton_Home.PressedColor = System.Drawing.Color.White;
+            this.siticoneButton_Home.ShadowDecoration.Parent = this.siticoneButton_Home;
+            this.siticoneButton_Home.Size = new System.Drawing.Size(154, 45);
+            this.siticoneButton_Home.TabIndex = 8;
+            this.siticoneButton_Home.Text = "首頁";
+            this.siticoneButton_Home.Click += new System.EventHandler(this.siticoneButton_Home_Click);
             // 
             // BtnArticle
             // 
@@ -352,7 +547,7 @@ namespace Medical
             this.BtnArticle.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
             this.BtnArticle.HoverState.ForeColor = System.Drawing.Color.White;
             this.BtnArticle.HoverState.Parent = this.BtnArticle;
-            this.BtnArticle.Location = new System.Drawing.Point(958, 42);
+            this.BtnArticle.Location = new System.Drawing.Point(801, 41);
             this.BtnArticle.Name = "BtnArticle";
             this.BtnArticle.PressedColor = System.Drawing.Color.White;
             this.BtnArticle.ShadowDecoration.Parent = this.BtnArticle;
@@ -360,38 +555,6 @@ namespace Medical
             this.BtnArticle.TabIndex = 7;
             this.BtnArticle.Text = "衛教保健";
             this.BtnArticle.Click += new System.EventHandler(this.BtnArticle_Click);
-            // 
-            // BtnInfo
-            // 
-            this.BtnInfo.Animated = true;
-            this.BtnInfo.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.BtnInfo.CheckedState.CustomBorderColor = System.Drawing.Color.Cyan;
-            this.BtnInfo.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.BtnInfo.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.BtnInfo.CheckedState.Parent = this.BtnInfo;
-            this.BtnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnInfo.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.BtnInfo.CustomImages.Parent = this.BtnInfo;
-            this.BtnInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnInfo.DisabledState.Parent = this.BtnInfo;
-            this.BtnInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.BtnInfo.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInfo.ForeColor = System.Drawing.Color.DimGray;
-            this.BtnInfo.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
-            this.BtnInfo.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.BtnInfo.HoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnInfo.HoverState.Parent = this.BtnInfo;
-            this.BtnInfo.Location = new System.Drawing.Point(798, 42);
-            this.BtnInfo.Name = "BtnInfo";
-            this.BtnInfo.PressedColor = System.Drawing.Color.White;
-            this.BtnInfo.ShadowDecoration.Parent = this.BtnInfo;
-            this.BtnInfo.Size = new System.Drawing.Size(154, 45);
-            this.BtnInfo.TabIndex = 6;
-            this.BtnInfo.Text = "網站資訊";
-            this.BtnInfo.Click += new System.EventHandler(this.BtnInfo_Click);
             // 
             // BtnStore
             // 
@@ -416,7 +579,7 @@ namespace Medical
             this.BtnStore.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
             this.BtnStore.HoverState.ForeColor = System.Drawing.Color.White;
             this.BtnStore.HoverState.Parent = this.BtnStore;
-            this.BtnStore.Location = new System.Drawing.Point(638, 42);
+            this.BtnStore.Location = new System.Drawing.Point(640, 41);
             this.BtnStore.Name = "BtnStore";
             this.BtnStore.PressedColor = System.Drawing.Color.White;
             this.BtnStore.ShadowDecoration.Parent = this.BtnStore;
@@ -448,7 +611,7 @@ namespace Medical
             this.BtnDoctorTeam.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
             this.BtnDoctorTeam.HoverState.ForeColor = System.Drawing.Color.White;
             this.BtnDoctorTeam.HoverState.Parent = this.BtnDoctorTeam;
-            this.BtnDoctorTeam.Location = new System.Drawing.Point(478, 41);
+            this.BtnDoctorTeam.Location = new System.Drawing.Point(480, 41);
             this.BtnDoctorTeam.Name = "BtnDoctorTeam";
             this.BtnDoctorTeam.PressedColor = System.Drawing.Color.White;
             this.BtnDoctorTeam.ShadowDecoration.Parent = this.BtnDoctorTeam;
@@ -456,38 +619,6 @@ namespace Medical
             this.BtnDoctorTeam.TabIndex = 4;
             this.BtnDoctorTeam.Text = "醫療團隊";
             this.BtnDoctorTeam.Click += new System.EventHandler(this.BtnDoctorTeam_Click);
-            // 
-            // BtnTreatment
-            // 
-            this.BtnTreatment.Animated = true;
-            this.BtnTreatment.ButtonMode = Siticone.Desktop.UI.WinForms.Enums.ButtonMode.RadioButton;
-            this.BtnTreatment.CheckedState.CustomBorderColor = System.Drawing.Color.Cyan;
-            this.BtnTreatment.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.BtnTreatment.CheckedState.ForeColor = System.Drawing.Color.White;
-            this.BtnTreatment.CheckedState.Parent = this.BtnTreatment;
-            this.BtnTreatment.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnTreatment.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.BtnTreatment.CustomImages.Parent = this.BtnTreatment;
-            this.BtnTreatment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnTreatment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnTreatment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnTreatment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnTreatment.DisabledState.Parent = this.BtnTreatment;
-            this.BtnTreatment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.BtnTreatment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnTreatment.ForeColor = System.Drawing.Color.DimGray;
-            this.BtnTreatment.HoverState.CustomBorderColor = System.Drawing.Color.Gray;
-            this.BtnTreatment.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
-            this.BtnTreatment.HoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnTreatment.HoverState.Parent = this.BtnTreatment;
-            this.BtnTreatment.Location = new System.Drawing.Point(324, 41);
-            this.BtnTreatment.Name = "BtnTreatment";
-            this.BtnTreatment.PressedColor = System.Drawing.Color.White;
-            this.BtnTreatment.ShadowDecoration.Parent = this.BtnTreatment;
-            this.BtnTreatment.Size = new System.Drawing.Size(154, 45);
-            this.BtnTreatment.TabIndex = 3;
-            this.BtnTreatment.Text = "服務項目";
-            this.BtnTreatment.Click += new System.EventHandler(this.BtnTreatment_Click);
             // 
             // BtnClinic
             // 
@@ -512,7 +643,7 @@ namespace Medical
             this.BtnClinic.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
             this.BtnClinic.HoverState.ForeColor = System.Drawing.Color.White;
             this.BtnClinic.HoverState.Parent = this.BtnClinic;
-            this.BtnClinic.Location = new System.Drawing.Point(170, 41);
+            this.BtnClinic.Location = new System.Drawing.Point(334, 41);
             this.BtnClinic.Name = "BtnClinic";
             this.BtnClinic.PressedColor = System.Drawing.Color.White;
             this.BtnClinic.ShadowDecoration.Parent = this.BtnClinic;
@@ -544,7 +675,7 @@ namespace Medical
             this.ReportsBtn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(43)))));
             this.ReportsBtn.HoverState.ForeColor = System.Drawing.Color.White;
             this.ReportsBtn.HoverState.Parent = this.ReportsBtn;
-            this.ReportsBtn.Location = new System.Drawing.Point(16, 41);
+            this.ReportsBtn.Location = new System.Drawing.Point(180, 41);
             this.ReportsBtn.Name = "ReportsBtn";
             this.ReportsBtn.PressedColor = System.Drawing.Color.White;
             this.ReportsBtn.ShadowDecoration.Parent = this.ReportsBtn;
@@ -567,7 +698,7 @@ namespace Medical
             this.TopHeader.Location = new System.Drawing.Point(0, 0);
             this.TopHeader.Name = "TopHeader";
             this.TopHeader.ShadowDecoration.Parent = this.TopHeader;
-            this.TopHeader.Size = new System.Drawing.Size(1277, 40);
+            this.TopHeader.Size = new System.Drawing.Size(1369, 40);
             this.TopHeader.TabIndex = 0;
             // 
             // lbRole
@@ -575,7 +706,7 @@ namespace Medical
             this.lbRole.AutoSize = true;
             this.lbRole.Location = new System.Drawing.Point(112, 12);
             this.lbRole.Name = "lbRole";
-            this.lbRole.Size = new System.Drawing.Size(43, 23);
+            this.lbRole.Size = new System.Drawing.Size(35, 19);
             this.lbRole.TabIndex = 5;
             this.lbRole.Text = "Role";
             this.lbRole.Visible = false;
@@ -585,7 +716,7 @@ namespace Medical
             this.lbMemberID.AutoSize = true;
             this.lbMemberID.Location = new System.Drawing.Point(8, 12);
             this.lbMemberID.Name = "lbMemberID";
-            this.lbMemberID.Size = new System.Drawing.Size(91, 23);
+            this.lbMemberID.Size = new System.Drawing.Size(75, 19);
             this.lbMemberID.TabIndex = 3;
             this.lbMemberID.Text = "MemberID";
             this.lbMemberID.Visible = false;
@@ -601,7 +732,7 @@ namespace Medical
             this.siticoneControlBox2.HoverState.IconColor = System.Drawing.Color.White;
             this.siticoneControlBox2.HoverState.Parent = this.siticoneControlBox2;
             this.siticoneControlBox2.IconColor = System.Drawing.Color.Black;
-            this.siticoneControlBox2.Location = new System.Drawing.Point(1175, 8);
+            this.siticoneControlBox2.Location = new System.Drawing.Point(1267, 8);
             this.siticoneControlBox2.Name = "siticoneControlBox2";
             this.siticoneControlBox2.ShadowDecoration.Parent = this.siticoneControlBox2;
             this.siticoneControlBox2.Size = new System.Drawing.Size(39, 29);
@@ -617,7 +748,7 @@ namespace Medical
             this.siticoneControlBox1.HoverState.IconColor = System.Drawing.Color.Red;
             this.siticoneControlBox1.HoverState.Parent = this.siticoneControlBox1;
             this.siticoneControlBox1.IconColor = System.Drawing.Color.Black;
-            this.siticoneControlBox1.Location = new System.Drawing.Point(1226, 8);
+            this.siticoneControlBox1.Location = new System.Drawing.Point(1318, 8);
             this.siticoneControlBox1.Name = "siticoneControlBox1";
             this.siticoneControlBox1.ShadowDecoration.Parent = this.siticoneControlBox1;
             this.siticoneControlBox1.Size = new System.Drawing.Size(39, 29);
@@ -625,15 +756,17 @@ namespace Medical
             // 
             // PanelSlider
             // 
+            this.PanelSlider.AutoScroll = true;
             this.PanelSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.PanelSlider.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.PanelSlider.CustomBorderThickness = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.PanelSlider.Dock = System.Windows.Forms.DockStyle.Right;
             this.PanelSlider.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.PanelSlider.Location = new System.Drawing.Point(165, 87);
+            this.PanelSlider.Location = new System.Drawing.Point(173, 87);
+            this.PanelSlider.Margin = new System.Windows.Forms.Padding(0);
             this.PanelSlider.Name = "PanelSlider";
             this.PanelSlider.ShadowDecoration.Parent = this.PanelSlider;
-            this.PanelSlider.Size = new System.Drawing.Size(1112, 611);
+            this.PanelSlider.Size = new System.Drawing.Size(1196, 791);
             this.PanelSlider.TabIndex = 2;
             // 
             // timer1
@@ -642,10 +775,10 @@ namespace Medical
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1277, 698);
+            this.ClientSize = new System.Drawing.Size(1369, 878);
             this.Controls.Add(this.SideNav);
             this.Controls.Add(this.PanelSlider);
             this.Controls.Add(this.DragPanel);
@@ -673,24 +806,27 @@ namespace Medical
         private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox2;
         private Siticone.Desktop.UI.WinForms.SiticoneControlBox siticoneControlBox1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton BtnDoctorTeam;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton BtnTreatment;
         private Siticone.Desktop.UI.WinForms.SiticoneButton BtnClinic;
         private Siticone.Desktop.UI.WinForms.SiticoneButton ReportsBtn;
         private Siticone.Desktop.UI.WinForms.SiticonePanel SideNavButtonContainer;
         private Siticone.Desktop.UI.WinForms.SiticoneButton DashboardBtn;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton SettingBtn;
         private Siticone.Desktop.UI.WinForms.SiticoneButton SalesBtn;
         private Siticone.Desktop.UI.WinForms.SiticoneRatingStar siticoneRatingStar1;
         private Siticone.Desktop.UI.WinForms.SiticoneHtmlLabel siticoneHtmlLabel2;
         private System.Windows.Forms.Timer timer1;
         private Siticone.Desktop.UI.WinForms.SiticoneButton BtnArticle;
-        private Siticone.Desktop.UI.WinForms.SiticoneButton BtnInfo;
         private Siticone.Desktop.UI.WinForms.SiticoneButton BtnStore;
         private Siticone.Desktop.UI.WinForms.SiticoneButton BtnMyDoctor;
         internal Siticone.Desktop.UI.WinForms.SiticonePanel PanelSlider;
         private Siticone.Desktop.UI.WinForms.SiticoneButton LogonBtn;
         internal System.Windows.Forms.Label lbRole;
         internal System.Windows.Forms.Label lbMemberID;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton Btn_DoctorMaintain;
+        internal Siticone.Desktop.UI.WinForms.SiticoneButton Btn_Admin_Membercenter;
+        internal Siticone.Desktop.UI.WinForms.SiticoneButton Btn_User_MemberCenter;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton1;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton_Home;
+        private Siticone.Desktop.UI.WinForms.SiticoneButton siticoneButton_Admin;
     }
 }
 
