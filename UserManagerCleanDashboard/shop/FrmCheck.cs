@@ -213,6 +213,7 @@ namespace Medical.UserControls
         private void rbCredit_CheckedChanged(object sender, EventArgs e)
         {
             paytypeNum = 2;
+            //testGitHub
         }
     }
 }
